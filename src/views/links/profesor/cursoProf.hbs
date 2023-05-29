@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hogwarts</title>
+
+    <link rel="stylesheet" href="/css/estilos2.css">
+
+    <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
+</head>
+<body id="body">
+    
+    <header>
+        <div class="icon__menu">
+            <i class="fas fa-bars" id="btn_open"></i>
+        </div>
+    </header>
+
+    <div class="menu__side" id="menu_side">
+        
+        <div class="name__page">
+            
+              
+            <h1>Hogwarts</h1>
+            
+
+        </div>
+
+        <div class="options__menu">	
+
+            <a href="/links/indexest" class="selected">
+                <div class="option">
+                    <i class="fas fa-home" title="Inicio"></i>
+                    <h4>Home</h4>
+                </div>
+            </a>
+
+            <a href="/links/profe/cursos">
+                <div class="option">
+                    <i class="far fa-file" title="Portafolio"></i>
+                    <h4>Courses Lists</h4>
+                </div>
+            </a>
+            
+            <a href="/logout">
+                <div class="option">
+                    <i class="far fa-id-badge" title="Contacto"></i>
+                    <h4>Exit</h4>
+                </div>
+            </a>
+                </div>
+            </a>
+
+        </div>
+
+    </div>
+
+    <main>
+        <div class="row">
+            {{#if cursos}}
+            {{#each cursos}}
+            <div class="col-sm-3">
+                <div class="card text-bg-secondary mb-3" style="max-width: 25rem;">
+                    <div class="card-header bg-success text-white">Group Code{{idgrupo}}  </div>
+                    <div class="card-body">
+                        <h4 class="card-title">{{nombre}}</h4>
+                        <h class="card-text">{{dia}}</p>
+                            <p class="card-text">{{hora_inicio}} - {{hora_fin}}</p>
+                        <a type="button" class="btn btn-success btn-block p-1" href="/links/profe/descargarlista{{idgrupo}}">Download List</a>
+                        <a type="button" class="btn btn-success btn-block p-1" href="/links/profe/lista{{idgrupo}}">View List</a>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+        {{/if}}
+    </main>
+
+    <script src="/js/script.js"></script>
+</body>
+</html>

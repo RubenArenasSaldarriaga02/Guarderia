@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guarderia</title>
+
+    <link rel="stylesheet" href="/css/estilos2.css">
+
+    <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
+</head>
+
+<body id="body">
+
+    <header>
+        <div class="icon__menu">
+            <i class="fas fa-bars" id="btn_open"></i>
+        </div>
+    </header>
+
+    <div class="menu__side" id="menu_side">
+
+        <div class="name__page">
+
+
+            <h1>Guarderia</h1>
+
+
+        </div>
+
+        <div class="options__menu">
+
+            <a href="/links/indexest" class="selected">
+                <div class="option">
+                    <i class="fas fa-home" title="Inicio"></i>
+                    <h4>Home</h4>
+                </div>
+            </a>
+
+            <a href="/links/adminpanel">
+                <div class="option">
+                    <i class="far fa-file" title="Courses Lists"></i>
+                    <h4>Group Lists</h4>
+                </div>
+            </a>
+
+
+            <a href="/logout">
+                <div class="option">
+                    <i class="far fa-id-badge" title="Contacto"></i>
+                    <h4>Exit</h4>
+                </div>
+            </a>
+        </div>
+        </a>
+
+    </div>
+
+    </div>
+    <main>
+        {{#if estudiante}}
+        <form action="" method="post">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 id="titulo">Add Student in Group {{grupo}}</h2>
+                    </div>
+                    <div class="modal-body">
+                        <select class="btn btn-default dropdown-toggle" id="inputGroupSelect01" name="cedula">
+                            {{#each estudiante}}
+                            <option value={{cedula}}>{{nombre}}</option>
+                            {{/each}}
+                        </select>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="submit" value="Add Group" class="btn btn-success">
+                        <a type="button" class="btn btn-danger " href="/links/adminpanel">CANCEL</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+{{else}}
+        <div class="container p-4">
+        <div class="row">
+            <div class="col-md-4 mx-auto">
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    Todos los estudiantes están inscritos en este grupo.
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <a  type="button" class="btn btn-block" href="/links/adminpanel">Go back</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{{/if}}
+    </main>
+
+    <script src="/js/script.js"></script>
+</body>
+
+</html>

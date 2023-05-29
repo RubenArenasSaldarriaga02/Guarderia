@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guarderia</title>
+
+    <link rel="stylesheet" href="/css/estilos2.css">
+
+    <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
+</head>
+
+<body id="body">
+
+    <header>
+        <div class="icon__menu">
+            <i class="fas fa-bars" id="btn_open"></i>
+        </div>
+    </header>
+
+    <div class="menu__side" id="menu_side">
+
+        <div class="name__page">
+
+
+            <h1>Guarderia</h1>
+
+
+        </div>
+
+        <div class="options__menu">
+
+            <a href="/links/indexest" class="selected">
+                <div class="option">
+                    <i class="fas fa-home" title="Inicio"></i>
+                    <h4>Home</h4>
+                </div>
+            </a>
+
+            <a href="/links/adminpanel">
+                <div class="option">
+                    <i class="far fa-file" title="Courses Lists"></i>
+                    <h4>Group Lists</h4>
+                </div>
+            </a>
+
+
+            <a href="/logout">
+                <div class="option">
+                    <i class="far fa-id-badge" title="Contacto"></i>
+                    <h4>Exit</h4>
+                </div>
+            </a>
+        </div>
+        </a>
+
+    </div>
+
+    </div>
+
+    <main>
+        {{#if lista}}
+        <table class="table">
+            <thead class="table-success">
+                <th>identification</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Pensum</th>
+                <th>User</th>
+            </thead>
+            <tbody>
+                {{#each lista}}
+                <tr>
+                    <th>
+                        {{cedula}}
+                    </th>
+                    <th>
+                        {{nombre}}
+                    </th>
+                    <th>
+                        {{correo}}
+                    </th>
+                    <th>
+                        {{pensum_idpensum}}
+                    </th>
+                    <th>
+                        {{usuario_idusuario}}
+                    </th>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+        {{else}}
+                <div class="container p-4">
+        <div class="row">
+            <div class="col-md-4 mx-auto">
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    No hay alumnos matriculados en el grupo.
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <a  type="button" class="btn btn-block" href="/links/adminpanel">Go back</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/if}}
+    </main>
+
+    <script src="/js/script.js"></script>
+</body>
+
+</html>
