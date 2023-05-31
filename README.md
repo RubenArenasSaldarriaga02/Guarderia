@@ -19,7 +19,7 @@ Una vez los ejecutes, deberás ver algo como esto
 
 Posteriormente ya podras entrar a la web a traves del localhost:4000
 
-![image](https://user-images.githubusercontent.com/79883410/205372169-70d71e6c-965f-4994-989d-91378ef5faf3.png)
+
 
 
 ## Posibles problemas
